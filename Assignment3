@@ -1,0 +1,11 @@
+Que 1) Does ANSI recognize the data type DATE?
+      Yes, ANSI SQL recognizes the DATE data type, and it is supported in MySQL as well. 
+      The DATE data type is used to store dates without any time component.
+      It represents a date in the format 'YYYY-MM-DD'.
+      
+      
+ Que 2) which subdivision of sql is used to insert values in tables ?
+       the subdivision used to insert values into tables is known as Data Manipulation Language (DML). 
+       DML consists of commands that allow users to manipulate data within the database.
+       The primary DML command used to insert values into tables in MySQL is the INSERT statement.
+       It allows you to add one or more rows of data into a specified table.
