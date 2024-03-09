@@ -1,0 +1,46 @@
+Que 1)
+       KD4_sima_83599>select * from orders;
++------+--------+------------+------+------+
+| onum | amt    | odate      | cnum | snum |
++------+--------+------------+------+------+
+|   23 | 234.23 | 2024-02-07 |   43 |    5 |
++------+--------+------------+------+------+
+1 row in set (0.01 sec)
+
+
+
+ que 2)
+ KD4_sima_83599>create databse salespeoples;
+ crete table salespeoples (snum int,sname varchar(20),city varchar(24),comm int);
+KD4_sima_83599>insert into salespeoples values(1001,'peel','london',.12);
+KD4_sima_83599>select * from salespeoples;
++------+-------+--------+------+
+| snum | sname | city   | comm |
++------+-------+--------+------+
+| 1001 | peel  | london |    0 |
++------+-------+--------+------+
+1 row in set (0.00 sec)
+
+
+
+Que 3)KD4_sima_83599>select city,sname,snum,comm from salespeople;
++-----------+---------+------+------+
+| city      | sname   | snum | comm |
++-----------+---------+------+------+
+| London    | Peel    | 1001 | 0.12 |
+| San Jose  | Serres  | 1002 | 0.13 |
+| London    | Motika  | 1004 | 0.11 |
+| Barcelona | Rifkin  | 1007 | 0.15 |
+| New York  | Axelrod | 1003 | 0.10 |
++-----------+---------+------+------+
+5 rows in set (0.00 sec)
+
+Que 4)KD4_sima_83599>select rating,cname from customers where city='san jose';
++--------+----------+
+| rating | cname    |
++--------+----------+
+|    200 | Liu      |
+|    300 | Cisneros |
++--------+----------+
+2 rows in set (0.00 sec)
+
