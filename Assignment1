@@ -1,7 +1,7 @@
 Assignment no=1
 Que 1)create table SALESPEOPLE(Snum int (4),Sname varchar(10),city varchar(10),comm float(3.2));
    insert into SALESPEOPLE('4','sima','karad',3200);
-  KD4_sima_83599> select * from SALESPEOPLE;
+   select * from SALESPEOPLE;
    ------+-------+-------+------+
 | Snum | Sname | city  | Comm |
 +------+-------+-------+------+
@@ -9,11 +9,12 @@ Que 1)create table SALESPEOPLE(Snum int (4),Sname varchar(10),city varchar(10),c
 +------+-------+-------+------+
 
 
+
 que 2) create table customers(cnum int(4),cname varchar(10),city varchar(10),rating int(4),snum int(4));
 
 
        insert into customers values('4','sima','vita','4','4');
-   KD4_sima_83599>    select * from customers;
+       select * from customers;
         +------+-------+------+--------+------+
        | cnum | cname | city | rating | snum |
        +------+-------+------+--------+------+
@@ -21,14 +22,17 @@ que 2) create table customers(cnum int(4),cname varchar(10),city varchar(10),rat
        +------+-------+------+--------+------+
 
 
+
 que 3)create table orders(onum int(4),amt float(7,2),odate date,cnum int(4),snum int(4));
       insert into orders values('23',234.23,'2024-02-07','43','5');
       select * from orders;
-   KD4_sima_83599>   +------+--------+------------+------+------+
+      +------+--------+------------+------+------+
 | onum | amt    | odate      | cnum | snum |
 +------+--------+------------+------+------+
 |   23 | 234.23 | 2024-02-07 |   43 |    5 |
 +------+--------+------------+------+------+
+
+
 
 Que 4)create table salespeople(snum int,sname varchar(20),city varchar(20),comm int);
       INSERT INTO salespeople VALUES 
@@ -37,7 +41,7 @@ Que 4)create table salespeople(snum int,sname varchar(20),city varchar(20),comm 
     (1004, 'Motika', 'London', .11),
     (1007, 'Rafkin', 'Barcelona', .15),
     (1003, 'Alelrod', 'New York', .1);
- KD4_sima_83599> select * from salespeople;
+  select * from salespeople;
   +------+---------+-----------+--------+
 | snum | sname   | city      | comm   |
 +------+---------+-----------+--------+
@@ -49,21 +53,23 @@ Que 4)create table salespeople(snum int,sname varchar(20),city varchar(20),comm 
 +------+---------+-----------+--------+
 
 
+
+
 Que 5)create table CUSTOMERS(cnum int,cname varchar(25),city varchar(50),rating int , snum int);
      insert into CUSTOMERS values(2001,'hoffman','london',100,1001),(2002,'giovanni','rome',200,1003),(2003,'liu','san jose',200,1002),(2004,'grass','berlin',300,1002),(2006,'clemens','london',100,1001),(2008,'cisneros','san jose',300,1007),(2007,'pereira','rome',100,1004);
-  select * from CUSTOMERS;
+ KD4_sima_83599>select * from customers;
 +------+----------+----------+--------+------+
 | cnum | cname    | city     | rating | snum |
 +------+----------+----------+--------+------+
-| 2001 | hoffman  | london   |    100 | 1001 |
-| 2001 | hoffman  | london   |    100 | 1001 |
-| 2002 | giovanni | rome     |    200 | 1003 |
-| 2003 | liu      | san jose |    200 | 1002 |
-| 2004 | grass    | berlin   |    300 | 1002 |
-| 2006 | clemens  | london   |    100 | 1001 |
-| 2008 | cisneros | san jose |    300 | 1007 |
-| 2007 | pereira  | rome     |    100 | 1004 |
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2006 | Clemens  | London   |    100 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    100 | 1004 |
 +------+----------+----------+--------+------+
+7 rows in set (0.00 sec)
 
 
 Que 6)KD4_sima_83599>create table Orders(omun int,amt float,odate date,cnum int,snum int);
@@ -76,22 +82,23 @@ KD4_sima_83599>insert into Orders values(3009,1713.23,'1990-10-04',2002,1003),
 KD4_sima_83599>insert into Orders values(3007,75.75,'1990-10-04',2004,1002),
 KD4_sima_83599>insert into Orders values(3008,4723.00,'1990-10-05',2006,1001),
 KD4_sima_83599>insert into Orders values(3010,1309.95,'1990-10-06',2004,1002),KD4_sima_83599>select * from Orders;
+KD4_sima_83599>select * from orders;
 +------+---------+------------+------+------+
-| omun | amt     | odate      | cnum | snum |
+| onum | amt     | odate      | cnum | snum |
 +------+---------+------------+------+------+
-| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
 | 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
 | 3003 |  767.19 | 1990-10-03 | 2001 | 1001 |
-| 3002 |  1900.1 | 1990-10-03 | 2007 | 1004 |
+| 3002 | 1900.10 | 1990-10-03 | 2007 | 1004 |
 | 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |
 | 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
 | 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
 | 3007 |   75.75 | 1990-10-04 | 2004 | 1002 |
-| 3008 |    4723 | 1990-10-05 | 2006 | 1001 |
-| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |
-| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |
+| 3008 | 4723.00 | 1990-10-04 | 2006 | 1001 |
+| 3010 |  309.95 | 1990-10-04 | 2004 | 1002 |
+| 3011 | 9891.88 | 1990-10-04 | 2006 | 1001 |
 +------+---------+------------+------+------+
-11 rows in set (0.00 sec)
+10 rows in set (0.00 sec)
+
 
 
 
