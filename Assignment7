@@ -1,0 +1,71 @@
+Que 1)
+
+
+KD4_sima_83599>select count(odate) from Orders where odate='1090-10-03';
++--------------+
+| count(odate) |
++--------------+
+|            5 |
++--------------+
+1 row in set (0.00 sec)
+
+
+Que 2)
+
+select count(city) from CUSTOMERS where city !=null;
+
+
+Que  3)
+
+
+KD4_sima_83599>select cnum,min(amt) from Orders group by cnum;
++------+----------+
+| cnum | min(amt) |
++------+----------+
+| 2008 |    18.69 |
+| 2001 |   767.19 |
+| 2007 |   1900.1 |
+| 2003 |  5160.45 |
+| 2002 |  1713.23 |
+| 2004 |    75.75 |
+| 2006 |     4723 |
++------+----------+
+7 rows in set (0.01 sec)
+
+
+Que  4)
+
+KD4_sima_83599>select * from customers where cname like 'G%' order by cname asc limit 1;
++------+----------+------+--------+------+
+| cnum | cname    | city | rating | snum |
++------+----------+------+--------+------+
+| 2002 | Giovanni | Rome |    200 | 1003 |
++------+----------+------+--------+------+
+1 row in set (0.00 sec)
+
+
+
+Que 5)KD4_sima_83599>select city, max(rating) from CUSTOMERS group by city;
++----------+-------------+
+| city     | max(rating) |
++----------+-------------+
+| london   |         100 |
+| rome     |         200 |
+| san jose |         300 |
+| berlin   |         300 |
++----------+-------------+
+4 rows in set (0.00 sec)
+
+
+Que 6)
+
+KD4_sima_83599>select odate,count(distinct snum)  from orders group by odate order by 1;
++------------+----------------------+
+| odate      | count(distinct snum) |
++------------+----------------------+
+| 1990-10-03 |                    4 |
+| 1990-10-04 |                    3 |
++------------+----------------------+
+2 rows in set (0.01 sec)
+
+
