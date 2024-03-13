@@ -1,0 +1,74 @@
+Que 1 )
+
+KD4_sima_83599>select onum, cname from orders, customers where Orders.cnum=customers.cnum;
+ERROR 1054 (42S22): Unknown column 'Orders.cnum' in 'where clause'
+KD4_sima_83599>select onum, cname from orders, customers where orders.cnum=customers.cnum;
++------+----------+
+| onum | cname    |
++------+----------+
+| 3001 | Cisneros |
+| 3003 | Hoffman  |
+| 3002 | Pereira  |
+| 3005 | Liu      |
+| 3006 | Cisneros |
+| 3009 | Giovanni |
+| 3007 | Grass    |
+| 3008 | Clemens  |
+| 3010 | Grass    |
+| 3011 | Clemens  |
++------+----------+
+10 rows in set (0.00 sec)
+
+
+Que 2 )
+
+KD4_sima_83599>select sname,cname,onum from orders,customers,salespeople where orders.cnum=customers.cnum and customers.snum=salespeople.snum;
++---------+----------+------+
+| sname   | cname    | onum |
++---------+----------+------+
+| Rifkin  | Cisneros | 3001 |
+| Peel    | Hoffman  | 3003 |
+| Motika  | Pereira  | 3002 |
+| Serres  | Liu      | 3005 |
+| Rifkin  | Cisneros | 3006 |
+| Axelrod | Giovanni | 3009 |
+| Serres  | Grass    | 3007 |
+| Peel    | Clemens  | 3008 |
+| Serres  | Grass    | 3010 |
+| Peel    | Clemens  | 3011 |
++---------+----------+------+
+10 rows in set (0.01 sec)
+
+
+Que 3)
+
+KD4_sima_83599>select cname,sname,comm from customers,salespeople where salespeople.snum=customers.snum and comm > 0.12;
++----------+--------+------+
+| cname    | sname  | comm |
++----------+--------+------+
+| Liu      | Serres | 0.13 |
+| Grass    | Serres | 0.13 |
+| Cisneros | Rifkin | 0.15 |
++----------+--------+------+
+3 rows in set (0.00 sec)
+
+
+
+Que 4)
+KD4_sima_83599>select onum,orders.snum,rating,amt*comm from orders, customers,salespeople where orders.snum=customers.snum and orders.snum=salespeople.snum having rating >100 order by orders.snum;
++------+------+--------+----------+
+| onum | snum | rating | amt*comm |
++------+------+--------+----------+
+| 3010 | 1002 |    200 |  40.2935 |
+| 3007 | 1002 |    200 |   9.8475 |
+| 3005 | 1002 |    200 | 670.8585 |
+| 3010 | 1002 |    300 |  40.2935 |
+| 3007 | 1002 |    300 |   9.8475 |
+| 3005 | 1002 |    300 | 670.8585 |
+| 3009 | 1003 |    200 | 171.3230 |
+| 3006 | 1007 |    300 | 164.7240 |
+| 3001 | 1007 |    300 |   2.8035 |
++------+------+--------+----------+
+9 rows in set (0.00 sec)
+
+
