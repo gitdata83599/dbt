@@ -1,0 +1,64 @@
+
+
+Que 1)
+KD4_sima_83599>select onum,snum,amt*8.12 "commission" from orders;
++------+------+------------+
+| onum | snum | commission |
++------+------+------------+
+| 3001 | 1007 |   151.7628 |
+| 3003 | 1001 |  6229.5828 |
+| 3002 | 1004 | 15428.8120 |
+| 3005 | 1002 | 41902.8540 |
+| 3006 | 1007 |  8917.0592 |
+| 3009 | 1003 | 13911.4276 |
+| 3007 | 1002 |   615.0900 |
+| 3008 | 1001 | 38350.7600 |
+| 3010 | 1002 |  2516.7940 |
+| 3011 | 1001 | 80322.0656 |
++------+------+------------+
+10 rows in set (0.00 sec)
+
+Que 2)
+
+KD4_sima_83599>select city, max(rating) from CUSTOMERS  group by city;
++----------+-------------+
+| city     | max(rating) |
++----------+-------------+
+| london   |         100 |
+| rome     |         200 |
+| san jose |         300 |
+| berlin   |         300 |
++----------+-------------+
+4 rows in set (0.00 sec)
+
+
+Que 3)
+
+KD4_sima_83599>select rating,cname,cnum from customers order by rating desc;
++--------+----------+------+
+| rating | cname    | cnum |
++--------+----------+------+
+|    300 | Grass    | 2004 |
+|    300 | Cisneros | 2008 |
+|    200 | Giovanni | 2002 |
+|    200 | Liu      | 2003 |
+|    100 | Hoffman  | 2001 |
+|    100 | Clemens  | 2006 |
+|    100 | Pereira  | 2007 |
++--------+----------+------+
+7 rows in set (0.00 sec)
+
+  
+  Que 4)
+  
+  D4_sima_83599>select odate from Orders group by odate order by odate desc;
++------------+
+| odate      |
++------------+
+| 1090-10-06 |
+| 1090-10-05 |
+| 1090-10-04 |
+| 1090-10-03 |
++------------+
+4 rows in set (0.00 sec)
+
