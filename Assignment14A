@@ -1,0 +1,53 @@
+ans1-
+KD4_amisha_84117>insert into salespeople(snum,sname,city,comm) values(1100,'Blanco','San Jose',null);
+Query OK, 1 row affected (0.01 sec)
+KD4_amisha_84117>select * from salespeople;
++------+---------+-----------+------+
+| snum | sname   | city      | comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
+| 1002 | motika  | San Jose  | 0.13 |
+| 1100 | Blanco  | San Jose  | NULL |
++------+---------+-----------+------+
+
+
+ans2-
+KD4_amisha_84117>delete from orders where snum=1001;
+Query OK, 3 rows affected (0.01 sec)
+
+KD4_amisha_84117>select * from orders;
++------+---------+------------+------+------+
+| onum | amt     | odate      | cnum | snum |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3002 | 1900.10 | 1990-10-03 | 2007 | 1004 |
+| 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
+| 3007 |   75.75 | 1990-10-04 | 2004 | 1002 |
+| 3010 |  309.95 | 1990-10-04 | 2004 | 1002 |
++------+---------+------------+------+------+
+
+
+ans3-
+KD4_amisha_84117>select city, rating+100 as increased_rating from customers where city='Rome';
++------+------------------+
+| city | increased_rating |
++------+------------------+
+| Rome |              300 |
+| Rome |              200 |
++------+------------------+
+
+ans4-
+KD4_amisha_84117>update salespeople set sname='motika' where sname='Serres';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+KD4_amisha_84117>update salespeople set sname='motika' where sname='Serres';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
