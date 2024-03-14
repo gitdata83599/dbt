@@ -1,0 +1,36 @@
+Que 1 )
+
+KD4_sima_83599>select cname,onum from orders,customers where orders.cnum=customers.cnum and cname=(select cname from customers where cname='cisneros');
++----------+------+
+| cname    | onum |
++----------+------+
+| Cisneros | 3001 |
+| Cisneros | 3006 |
++----------+------+
+2 rows in set (0.00 sec)
+
+     
+  Que  2)
+  
+  KD4_sima_83599>select cname,rating from customers where cnum in (select cnum from orders where amt > (select avg(amt) from orders));
++---------+--------+
+| cname   | rating |
++---------+--------+
+| Liu     |    200 |
+| Clemens |    100 |
++---------+--------+
+2 rows in set (0.01 sec)
+        
+        
+  Que  3)
+  
+  
+  KD4_sima_83599>select snum,sum(amt) "total amount" from orders group by snum having sum(amt) > (select max(amt) from orders);
++------+--------------+
+| snum | total amount |
++------+--------------+
+| 1001 |     15382.07 |
++------+--------------+
+1 row in set (0.00 sec)
+
+                     
