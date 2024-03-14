@@ -1,0 +1,30 @@
+
+
+Que 1)
+
+
+KD4_sima_83599>select a.snum,a.sname,a.city,a.comm from salespeople a,salespeople b where (a.snum != b.snum and a.city=b.city);
++------+--------+--------+------+
+| snum | sname  | city   | comm |
++------+--------+--------+------+
+| 1004 | Motika | London | 0.11 |
+| 1001 | Peel   | London | 0.12 |
++------+--------+--------+------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+Que 2)
+
+KD4_sima_83599>select a.cname,b.city from customers a,customers b where a.rating=b.rating and b.cname='hoffman';
++---------+--------+
+| cname   | city   |
++---------+--------+
+| Hoffman | London |
+| Clemens | London |
+| Pereira | London |
++---------+--------+
+3 rows in set (0.00 sec)
+
