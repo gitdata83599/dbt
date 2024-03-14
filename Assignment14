@@ -1,18 +1,20 @@
 Que  1)
 
+KD4_sima_83599>insert into salespeople(city,sname,comm,snum) values('san jose','blanco',null,1100);
+Query OK, 1 row affected (0.00 sec)
+
 KD4_sima_83599>select * from salespeople;
 +------+---------+-----------+------+
 | snum | sname   | city      | comm |
 +------+---------+-----------+------+
 | 1001 | Peel    | London    | 0.12 |
-| 1002 | Serres  | San Jose  | 0.13 |
+| 1002 | motika  | San Jose  | 0.13 |
 | 1004 | Motika  | London    | 0.11 |
 | 1007 | Rifkin  | Barcelona | 0.15 |
 | 1003 | Axelrod | New York  | 0.10 |
 | 1100 | blanco  | san jose  | NULL |
-| 1100 | blanco  | san jose  | NULL |
 +------+---------+-----------+------+
-7 rows in set (0.00 sec)
+6 rows in set (0.00 sec)
 
 
 
@@ -20,7 +22,7 @@ KD4_sima_83599>select * from salespeople;
 
 Que  2)
 
-
+delete from customers where cname='clemens';
 KD4_sima_83599>select * from customers;
 +------+----------+----------+--------+------+
 | cnum | cname    | city     | rating | snum |
