@@ -1,0 +1,57 @@
+Que  1)
+
+KD4_sima_83599>select cname, city, 'HIGH RATING' Rating from customers where Rating >200 union select cname,city,'Low Rating' Rating from customers where rating <=200;
++----------+----------+-------------+
+| cname    | city     | Rating      |
++----------+----------+-------------+
+| Grass    | Berlin   | HIGH RATING |
+| Cisneros | San Jose | HIGH RATING |
+| Hoffman  | London   | Low Rating  |
+| Giovanni | Rome     | Low Rating  |
+| Liu      | San Jose | Low Rating  |
+| Pereira  | Rome     | Low Rating  |
++----------+----------+-------------+
+6 rows in set (0.00 sec)
+
+
+Que  2)
+
+KD4_sima_83599>select sname,snum from salespeople where snum = any(select snum from orders group by snum having count(snum>1)) union select cname,cnum from customers where snum = any(select snum from orders group by snum having count(snum>1));
++----------+------+
+| sname    | snum |
++----------+------+
+| Peel     | 1001 |
+| motika   | 1002 |
+| Motika   | 1004 |
+| Rifkin   | 1007 |
+| Axelrod  | 1003 |
+| Hoffman  | 2001 |
+| Giovanni | 2002 |
+| Liu      | 2003 |
+| Grass    | 2004 |
+| Cisneros | 2008 |
+| Pereira  | 2007 |
++----------+------+
+11 rows in set (0.02 sec)
+
+
+
+
+que  3)
+
+KD4_sima_83599>select snum from salespeople where city="San Jose" union select cnum from customers where city="San Jose" union all select onum from orders where odate = "1990-10-03";
++------+
+| snum |
++------+
+| 1002 |
+| 1100 |
+| 2003 |
+| 2008 |
+| 3001 |
+| 3003 |
+| 3002 |
+| 3005 |
+| 3006 |
++------+
+9 rows in set (0.00 sec)
+
