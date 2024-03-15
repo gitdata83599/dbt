@@ -1,0 +1,56 @@
+Que  1)
+
+KD4_sima_83599>create table multicust as select * from salespeople where snum=any(select snum from customers group by snum having count(snum)>1);
+Query OK, 1 row affected (0.03 sec)
+
+KD4_sima_83599>select * from orders;
++------+---------+------------+------+------+
+| onum | amt     | odate      | cnum | snum |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3002 | 1900.10 | 1990-10-03 | 2007 | 1004 |
+| 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
+| 3007 |   75.75 | 1990-10-04 | 2004 | 1002 |
+| 3010 |  309.95 | 1990-10-04 | 2004 | 1002 |
++------+---------+------------+------+------+
+
+
+
+Que  2)
+
+KD4_sima_83599>delete from customers  where cnum NOT IN(Select abcd.cnum from (select c1.cnum from customers c1,orders o1 where c1.cnum=o1.cnum)as abcd);
+Query OK, 1 row affected (0.01 sec)
+
+KD4_sima_83599>select * from customers;
++------+----------+----------+--------+------+
+| cnum | cname    | city     | rating | snum |
++------+----------+----------+--------+------+
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    100 | 1004 |
++------+----------+----------+--------+------+
+
+
+Que  3)
+
+
+KD4_sima_83599>update salespeople set comm=comm+0.2 where snum=(select distinct snum from orders where amt>3000);
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+KD4_sima_83599>select * from salespeople;
++------+---------+-----------+------+
+| snum | sname   | city      | comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1004 | motika  | London    | 0.11 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
+| 1002 | motika  | San Jose  | 0.33 |
+| 1100 | Blanco  | San Jose  | NULL |
++------+---------+-----------+------+
+
